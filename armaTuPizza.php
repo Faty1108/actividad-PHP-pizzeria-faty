@@ -11,15 +11,16 @@
     <body>
         <nav class="navbar">
             <div class="nav-left">
+                <!-- Aquí va el PHP para la bandera -->
                 <?php
-                $imgs =[
-                    "it" => "img/banderas/it.png",
-                    "mx" => "img/banderas/mx.png",
-                    "fr" => "img/banderas/fr.png",
-                    "ar" => "img/banderas/ar.png"
-                ];
-                $pais = $_GET ["pais"];
-                echo "<img src=". $imgs[$pais] ." class='flag-icon'>";
+                    $imgs = [
+                        "it" => "img/banderas/it.png",
+                        "mx" => "img/banderas/mx.png",
+                        "fr" => "img/banderas/fr.png",
+                        "ar" => "img/banderas/ar.png"
+                    ]; 
+                    $pais = $_GET["pais"];
+                    echo "<img src=". $imgs[$pais] ." class='flag-icon'>";
                 ?>
                 <h1>PizzaPlaneta</h1>
             </div>
@@ -123,7 +124,11 @@
                 </div>
 
                 <!-- Aquí va otro php (Oculto, wuuu) -->
-                
+                <?php
+
+                    echo "<input type='hidden' value ='" . $pais . "' name='pais'>";
+                ?>
+
                 <button type="submit" class="btn-submit">¡Pedir mi Pizza!</button>
             </form>
         </main>
